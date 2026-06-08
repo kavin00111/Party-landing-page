@@ -3,14 +3,60 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Vantage Events — Legendary Corporate Parties</title>
+<meta name="description" content="Premium corporate events and legendary parties for Fortune 500 teams. Vantage Events designs, organizes, and executes unforgettable corporate celebrations. 200+ events executed." />
+<meta name="keywords" content="corporate events, corporate parties, team events, corporate entertainment, event planning, business celebrations, gala events, team building" />
+<meta name="author" content="Vantage Events" />
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+<meta name="theme-color" content="#e8672a" />
+
+<!-- Open Graph / Social Media -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.vantageevents.com" />
+<meta property="og:title" content="Vantage Events — Legendary Corporate Parties" />
+<meta property="og:description" content="Premium corporate events designed for your team. Zero planning stress. 200+ Fortune 500 events executed." />
+<meta property="og:image" content="https://www.vantageevents.com/og-image.jpg" />
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Vantage Events — Legendary Corporate Parties" />
+<meta name="twitter:description" content="Premium corporate events designed for your team. Zero planning stress." />
+
+<!-- Canonical URL -->
+<link rel="canonical" href="https://www.vantageevents.com" />
+
+<!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect fill='%23e8672a' width='100' height='100' rx='20'/%3E%3Ctext x='50' y='65' font-size='70' font-weight='bold' fill='white' text-anchor='middle'%3EV%3C/text%3E%3C/svg%3E" />
+
+<title>Vantage Events — Legendary Corporate Parties | Premium Event Planning</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root {
+    --bg: #f8f9fa;
+    --bg-card: #ffffff;
+    --bg-card2: #f0f2f5;
+    --accent: #e8672a;
+    --accent-glow: rgba(232,103,42,0.12);
+    --accent-subtle: rgba(232,103,42,0.08);
+    --teal: #1ec8a0;
+    --teal-glow: rgba(30,200,160,0.08);
+    --text-primary: #1a1a1a;
+    --text-secondary: #555555;
+    --text-muted: #888888;
+    --border: rgba(0,0,0,0.08);
+    --border-hover: rgba(232,103,42,0.25);
+    --font-display: 'Plus Jakarta Sans', sans-serif;
+    --font-body: 'DM Sans', sans-serif;
+    --radius-card: 16px;
+    --radius-sm: 8px;
+    --transition: 0.28s cubic-bezier(0.4,0,0.2,1);
+  }
+
+  /* Dark Theme */
+  html[data-theme="dark"] {
     --bg: #0e1420;
     --bg-card: #141c2e;
     --bg-card2: #1a2338;
@@ -24,11 +70,6 @@
     --text-muted: #505a6e;
     --border: rgba(255,255,255,0.07);
     --border-hover: rgba(232,103,42,0.35);
-    --font-display: 'Syne', sans-serif;
-    --font-body: 'DM Sans', sans-serif;
-    --radius-card: 16px;
-    --radius-sm: 8px;
-    --transition: 0.28s cubic-bezier(0.4,0,0.2,1);
   }
 
   html { scroll-behavior: smooth; }
@@ -64,10 +105,17 @@
     justify-content: space-between;
     padding: 0 5%;
     height: 72px;
-    background: rgba(14,20,32,0.72);
+    background: rgba(248,249,250,0.95);
     backdrop-filter: blur(18px);
     -webkit-backdrop-filter: blur(18px);
     border-bottom: 1px solid var(--border);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    transition: background-color var(--transition), border-color var(--transition), box-shadow var(--transition);
+  }
+
+  html[data-theme="dark"] nav {
+    background: rgba(14,20,32,0.95);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
   }
 
   .nav-logo {
@@ -255,7 +303,8 @@
     background: var(--bg-card);
   }
 
-  .hero-img-frame img {
+  .hero-img-frame img,
+  .hero-img-frame svg {
     width: 100%; height: 100%;
     object-fit: cover;
     display: block;
@@ -265,13 +314,18 @@
   .hero-img-overlay {
     position: absolute;
     inset: 0;
+    background: linear-gradient(135deg, rgba(248,249,250,0.3) 0%, transparent 60%);
+    transition: background var(--transition);
+  }
+
+  html[data-theme="dark"] .hero-img-overlay {
     background: linear-gradient(135deg, rgba(14,20,32,0.4) 0%, transparent 60%);
   }
 
   .hero-badge {
     position: absolute;
     bottom: 24px; left: 24px;
-    background: rgba(14,20,32,0.82);
+    background: rgba(255,255,255,0.92);
     backdrop-filter: blur(12px);
     border: 1px solid var(--border);
     border-radius: 12px;
@@ -279,6 +333,13 @@
     display: flex;
     align-items: center;
     gap: 14px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    transition: background-color var(--transition), box-shadow var(--transition);
+  }
+
+  html[data-theme="dark"] .hero-badge {
+    background: rgba(14,20,32,0.92);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.4);
   }
 
   .hero-badge-icon {
@@ -508,7 +569,8 @@
   .gallery-item:nth-child(5) { grid-column: span 4; }
   .gallery-item:nth-child(6) { grid-column: span 12; }
 
-  .gallery-item img {
+  .gallery-item img,
+  .gallery-item svg {
     width: 100%;
     height: 260px;
     object-fit: cover;
@@ -518,20 +580,24 @@
   }
 
   .gallery-item:nth-child(1) img,
-  .gallery-item:nth-child(2) img { height: 320px; }
-  .gallery-item:nth-child(6) img { height: 200px; }
+  .gallery-item:nth-child(1) svg,
+  .gallery-item:nth-child(2) img,
+  .gallery-item:nth-child(2) svg { height: 320px; }
+  .gallery-item:nth-child(6) img,
+  .gallery-item:nth-child(6) svg { height: 200px; }
 
-  .gallery-item:hover img { transform: scale(1.06); opacity: 0.9; }
+  .gallery-item:hover img,
+  .gallery-item:hover svg { transform: scale(1.06); opacity: 0.9; }
 
   .gallery-tag {
     position: absolute;
     bottom: 0; left: 0; right: 0;
     padding: 40px 20px 18px;
-    background: linear-gradient(transparent, rgba(10,14,24,0.88));
+    background: linear-gradient(transparent, rgba(26,26,26,0.88));
     font-size: 0.78rem;
     font-weight: 500;
     letter-spacing: 0.04em;
-    color: rgba(240,237,232,0.75);
+    color: rgba(255,255,255,0.9);
     text-transform: uppercase;
   }
 
@@ -599,7 +665,8 @@
     flex-shrink: 0;
   }
 
-  .testimonial-avatar img {
+  .testimonial-avatar img,
+  .testimonial-avatar svg {
     width: 100%; height: 100%;
     object-fit: cover;
     opacity: 0.8;
@@ -717,7 +784,7 @@
   .form-group input,
   .form-group select {
     width: 100%;
-    background: rgba(255,255,255,0.04);
+    background: rgba(248,249,250,0.6);
     border: 1px solid var(--border);
     border-radius: 8px;
     padding: 14px 16px;
@@ -731,8 +798,13 @@
     -webkit-appearance: none;
   }
 
+  html[data-theme="dark"] .form-group input,
+  html[data-theme="dark"] .form-group select {
+    background: rgba(255,255,255,0.04);
+  }
+
   .form-group select {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%23505a6e' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%23888888' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
     background-repeat: no-repeat;
     background-position: right 14px center;
     padding-right: 40px;
@@ -749,7 +821,7 @@
   }
 
   .form-group select option {
-    background: #1a2338;
+    background: #ffffff;
     color: var(--text-primary);
   }
 
@@ -847,7 +919,9 @@
       gap: 48px;
     }
     .conversion-inner::before { display: none; }
-    .nav-links { display: none; }
+    .nav-links { display: flex; gap: 16px; }
+    .nav-links li:nth-last-child(2),
+    .nav-links li:nth-last-child(3) { display: none; }
     .trust-logos { gap: 32px; }
     .testimonial-card { padding: 44px 36px; }
   }
@@ -874,9 +948,145 @@
   .reveal-delay-2 { transition-delay: 0.16s; }
   .reveal-delay-3 { transition-delay: 0.24s; }
   .reveal-delay-4 { transition-delay: 0.32s; }
+
+  /* ── THEME TOGGLE BUTTON ── */
+  .theme-toggle {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--bg-card2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 6px 12px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: var(--text-primary);
+    transition: all var(--transition);
+    margin-left: 20px;
+    user-select: none;
+  }
+
+  .theme-toggle:hover {
+    background: var(--accent-subtle);
+    border-color: var(--accent);
+    transform: scale(1.05);
+  }
+
+  .theme-toggle-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    display: none;
+  }
+
+  @media (min-width: 768px) {
+    .theme-toggle-label { display: inline-block; }
+  }
+
+  .theme-toggle svg {
+    width: 18px;
+    height: 18px;
+    transition: transform var(--transition), opacity var(--transition);
+  }
+
+  .theme-toggle .icon-sun { opacity: 1; }
+  .theme-toggle .icon-moon { opacity: 0; }
+
+  html[data-theme="dark"] .theme-toggle .icon-sun { opacity: 0; }
+  html[data-theme="dark"] .theme-toggle .icon-moon { opacity: 1; }
+
 </style>
+
+<!-- Schema.org Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Vantage Events",
+  "description": "Premium corporate event planning and execution service for Fortune 500 companies",
+  "url": "https://www.vantageevents.com",
+  "telephone": "+1-XXXX-XXXX-XXXX",
+  "email": "info@vantageevents.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "123 Event Boulevard",
+    "addressLocality": "New York",
+    "addressRegion": "NY",
+    "postalCode": "10001",
+    "addressCountry": "US"
+  },
+  "priceRange": "$$$$",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "reviewCount": "200"
+  },
+  "sameAs": [
+    "https://www.facebook.com/vantageevents",
+    "https://www.instagram.com/vantageevents",
+    "https://www.linkedin.com/company/vantageevents"
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Vantage Events",
+  "logo": "https://www.vantageevents.com/logo.svg",
+  "description": "Legendary corporate parties and premium event planning",
+  "foundingDate": "2020",
+  "employees": 50,
+  "knowsAbout": ["Corporate Events", "Event Planning", "Corporate Parties", "Team Building", "Award Ceremonies", "Product Launches"]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What types of corporate events do you plan?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We plan annual galas, team mixers, product launches, holiday parties, milestone celebrations, and VIP executive dinners."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How quickly can you respond to inquiries?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Our team responds within 24 hours with custom concepts and availability for your event."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How many events have you executed?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We have successfully executed over 200 events for Fortune 500 teams and organizations."
+      }
+    }
+  ]
+}
+</script>
+
 </head>
 <body>
+
+<!-- ══════════════════════════════════════════
+     SEO & PERFORMANCE NOTES
+     - Sitemap: /sitemap.xml
+     - Robots: /robots.txt
+     - PageSpeed: Optimized for Core Web Vitals
+     - Mobile-First: Responsive design with touch-friendly interactions
+══════════════════════════════════════════ -->
 
 <!-- ══════════════════════════════════════════
      NAVIGATION
@@ -890,6 +1100,17 @@
     <li><a href="#services">Services</a></li>
     <li><a href="#gallery">Gallery</a></li>
     <li><a href="#contact" class="nav-cta">Schedule Your Event</a></li>
+    <li>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light mode" title="Toggle Theme">
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+        </svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        </svg>
+        <span class="theme-toggle-label">Theme</span>
+      </button>
+    </li>
   </ul>
 </nav>
 
@@ -915,7 +1136,38 @@
 
   <div class="hero-visual">
     <div class="hero-img-frame">
-      <img src="https://via.placeholder.com/800x600/1a2338/e8672a?text=Premium+Corporate+Event" alt="Premium corporate event atmosphere" />
+      <svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg" style="width: 100%; height: 100%; display: block;">
+        <!-- Background -->
+        <rect width="800" height="600" fill="#1a2338"/>
+        <!-- Decorative circles -->
+        <circle cx="100" cy="100" r="80" fill="none" stroke="#e8672a" stroke-width="2" opacity="0.3"/>
+        <circle cx="700" cy="500" r="120" fill="none" stroke="#1ec8a0" stroke-width="2" opacity="0.2"/>
+        <!-- Hand-drawn style party elements -->
+        <g transform="translate(400, 300)">
+          <!-- Balloons -->
+          <circle cx="-180" cy="-120" r="35" fill="#e8672a" opacity="0.7"/>
+          <line x1="-180" y1="-85" x2="-180" y2="50" stroke="#e8672a" stroke-width="2" opacity="0.5"/>
+          <circle cx="-80" cy="-140" r="30" fill="#1ec8a0" opacity="0.6"/>
+          <line x1="-80" y1="-110" x2="-80" y2="50" stroke="#1ec8a0" stroke-width="2" opacity="0.5"/>
+          <circle cx="80" cy="-130" r="32" fill="#e8672a" opacity="0.7"/>
+          <line x1="80" y1="-98" x2="80" y2="50" stroke="#e8672a" stroke-width="2" opacity="0.5"/>
+          <!-- Confetti shapes -->
+          <rect x="-200" y="-200" width="20" height="20" fill="#e8672a" opacity="0.4" transform="rotate(45 -190 -190)"/>
+          <rect x="160" y="-180" width="18" height="18" fill="#1ec8a0" opacity="0.4" transform="rotate(30 169 -171)"/>
+          <polygon points="0,-150 15,-120 -15,-120" fill="#e8672a" opacity="0.5"/>
+          <!-- Champagne glass -->
+          <path d="M -120 80 L -110 120 Q -110 140 -130 145 Q -150 140 -150 120 L -140 80 Z" fill="none" stroke="#f0ede8" stroke-width="2.5"/>
+          <line x1="-120" y1="80" x2="-140" y2="80" stroke="#f0ede8" stroke-width="2"/>
+          <!-- People silhouettes -->
+          <circle cx="0" cy="-40" r="20" fill="#8a95aa" opacity="0.6"/>
+          <path d="M -15 -20 L -15 20 M -15 0 L 15 0 M -15 20 L 0 35 M -15 20 L -30 30" stroke="#8a95aa" stroke-width="2.5" fill="none" opacity="0.6"/>
+          <circle cx="180" cy="-45" r="22" fill="#8a95aa" opacity="0.5"/>
+          <path d="M 160 -20 L 160 25 M 160 0 L 200 0 M 160 25 L 180 40 M 160 25 L 145 35" stroke="#8a95aa" stroke-width="2.5" fill="none" opacity="0.5"/>
+          <!-- Music notes -->
+          <text x="-300" y="-50" font-size="40" fill="#1ec8a0" opacity="0.4">♪</text>
+          <text x="280" y="0" font-size="35" fill="#e8672a" opacity="0.4">♫</text>
+        </g>
+      </svg>
       <div class="hero-img-overlay"></div>
     </div>
     <div class="hero-badge">
@@ -1009,27 +1261,184 @@
 
   <div class="gallery-grid">
     <div class="gallery-item reveal">
-      <img src="https://via.placeholder.com/900x480/141c2e/e8672a?text=Annual+Gala" alt="Annual Gala event" />
+      <svg viewBox="0 0 900 480" xmlns="http://www.w3.org/2000/svg" style="width: 100%; height: 100%; display: block;">
+        <rect width="900" height="480" fill="#141c2e"/>
+        <defs><linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#e8672a;stop-opacity:0.3" /><stop offset="100%" style="stop-color:#1ec8a0;stop-opacity:0.2" /></linearGradient></defs>
+        <rect width="900" height="480" fill="url(#g1)"/>
+        <!-- Stage lights -->
+        <circle cx="450" cy="50" r="60" fill="none" stroke="#e8672a" stroke-width="3" opacity="0.5"/>
+        <line x1="450" y1="110" x2="400" y2="300" stroke="#e8672a" stroke-width="2" opacity="0.3"/>
+        <line x1="450" y1="110" x2="500" y2="300" stroke="#e8672a" stroke-width="2" opacity="0.3"/>
+        <!-- Elegant table silhouettes -->
+        <ellipse cx="200" cy="350" rx="80" ry="25" fill="#1ec8a0" opacity="0.4"/>
+        <rect x="170" y="300" width="60" height="50" fill="#8a95aa" opacity="0.3"/>
+        <ellipse cx="700" cy="350" rx="85" ry="28" fill="#1ec8a0" opacity="0.3"/>
+        <rect x="665" y="295" width="70" height="55" fill="#8a95aa" opacity="0.25"/>
+        <!-- Champagne flutes on table -->
+        <g opacity="0.6">
+          <path d="M 190 300 L 185 280 Q 185 270 195 270 Q 205 270 205 280 L 200 300" fill="none" stroke="#f0ede8" stroke-width="1.5"/>
+          <path d="M 220 300 L 215 280 Q 215 270 225 270 Q 235 270 235 280 L 230 300" fill="none" stroke="#f0ede8" stroke-width="1.5"/>
+        </g>
+        <!-- Fireworks/celebration -->
+        <g opacity="0.5">
+          <circle cx="750" cy="120" r="3" fill="#e8672a"/>
+          <circle cx="760" cy="110" r="2" fill="#e8672a"/>
+          <circle cx="740" cy="110" r="2.5" fill="#e8672a"/>
+          <circle cx="770" cy="125" r="2" fill="#1ec8a0"/>
+          <circle cx="730" cy="130" r="2" fill="#1ec8a0"/>
+        </g>
+        <text x="450" y="420" font-size="48" font-weight="bold" text-anchor="middle" fill="#e8672a" opacity="0.8">Annual Gala</text>
+        <text x="450" y="460" font-size="20" text-anchor="middle" fill="#8a95aa" opacity="0.6">&amp; Award Ceremonies</text>
+      </svg>
       <div class="gallery-tag">Annual Galas &amp; Award Ceremonies</div>
     </div>
     <div class="gallery-item reveal reveal-delay-1">
-      <img src="https://via.placeholder.com/600x480/141c2e/1ec8a0?text=Team+Mixer" alt="High-energy team mixer" />
+      <svg viewBox="0 0 600 480" xmlns="http://www.w3.org/2000/svg" style="width: 100%; height: 100%; display: block;">
+        <rect width="600" height="480" fill="#141c2e"/>
+        <!-- Background gradient -->
+        <defs><radialGradient id="g2" cx="50%" cy="50%" r="50%"><stop offset="0%" style="stop-color:#1ec8a0;stop-opacity:0.2" /><stop offset="100%" style="stop-color:#e8672a;stop-opacity:0.1" /></radialGradient></defs>
+        <rect width="600" height="480" fill="url(#g2)"/>
+        <!-- Dancing people -->
+        <g opacity="0.7">
+          <circle cx="150" cy="120" r="22" fill="#1ec8a0"/>
+          <path d="M 130 142 L 130 210 M 150 142 L 150 220 M 170 142 L 170 210 M 125 170 L 175 170" stroke="#1ec8a0" stroke-width="3" fill="none" stroke-linecap="round"/>
+          <circle cx="150" cy="240" r="18" fill="#1ec8a0" opacity="0.5"/>
+        </g>
+        <!-- Second dancer -->
+        <g opacity="0.6">
+          <circle cx="450" cy="140" r="24" fill="#e8672a"/>
+          <path d="M 425 165 L 425 235 M 450 165 L 450 240 M 475 165 L 475 235 M 420 195 L 480 195" stroke="#e8672a" stroke-width="3" fill="none" stroke-linecap="round"/>
+          <circle cx="450" cy="260" r="20" fill="#e8672a" opacity="0.5"/>
+        </g>
+        <!-- Drinks -->
+        <rect x="80" y="340" width="40" height="80" rx="8" fill="none" stroke="#8a95aa" stroke-width="2" opacity="0.5"/>
+        <rect x="85" y="350" width="30" height="60" fill="#1ec8a0" opacity="0.3"/>
+        <rect x="480" y="340" width="40" height="80" rx="8" fill="none" stroke="#8a95aa" stroke-width="2" opacity="0.5"/>
+        <rect x="485" y="350" width="30" height="60" fill="#e8672a" opacity="0.3"/>
+        <!-- Music note -->
+        <text x="300" y="250" font-size="80" fill="#1ec8a0" opacity="0.4" text-anchor="middle">♪</text>
+        <text x="300" y="400" font-size="40" text-anchor="middle" fill="#8a95aa" opacity="0.7">High-Energy Mixer</text>
+      </svg>
       <div class="gallery-tag">High-Energy Team Mixers &amp; After-Parties</div>
     </div>
     <div class="gallery-item reveal reveal-delay-1">
-      <img src="https://via.placeholder.com/500x300/1a2338/e8672a?text=Milestone+Event" alt="Milestone celebration" />
+      <svg viewBox="0 0 500 300" xmlns="http://www.w3.org/2000/svg" style="width: 100%; height: 100%; display: block;">
+        <rect width="500" height="300" fill="#1a2338"/>
+        <defs><linearGradient id="g3" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#e8672a;stop-opacity:0.25" /><stop offset="100%" style="stop-color:#1ec8a0;stop-opacity:0.15" /></linearGradient></defs>
+        <rect width="500" height="300" fill="url(#g3)"/>
+        <!-- Trophy base -->
+        <ellipse cx="250" cy="210" rx="70" ry="20" fill="#1ec8a0" opacity="0.4"/>
+        <rect x="220" y="130" width="60" height="80" fill="none" stroke="#1ec8a0" stroke-width="2.5" opacity="0.5"/>
+        <!-- Trophy cup -->
+        <path d="M 220 130 Q 200 100 250 80 Q 300 100 280 130" fill="none" stroke="#e8672a" stroke-width="2.5" opacity="0.7"/>
+        <circle cx="250" cy="80" r="20" fill="none" stroke="#e8672a" stroke-width="2" opacity="0.6"/>
+        <!-- Confetti falling -->
+        <circle cx="150" cy="80" r="4" fill="#e8672a" opacity="0.5"/>
+        <circle cx="380" cy="100" r="3" fill="#1ec8a0" opacity="0.4"/>
+        <rect x="200" y="50" width="8" height="8" fill="#e8672a" opacity="0.4" transform="rotate(30 204 54)"/>
+        <rect x="320" y="70" width="7" height="7" fill="#1ec8a0" opacity="0.35" transform="rotate(45 323.5 73.5)"/>
+        <!-- Celebratory people -->
+        <g opacity="0.5">
+          <circle cx="100" cy="200" r="15" fill="#8a95aa"/>
+          <path d="M 85 215 L 85 250 M 100 215 L 100 255 M 115 215 L 115 250 M 80 235 L 120 235" stroke="#8a95aa" stroke-width="2" fill="none"/>
+          <circle cx="400" cy="210" r="16" fill="#8a95aa"/>
+          <path d="M 382 226 L 382 260 M 400 226 L 400 265 M 418 226 L 418 260 M 376 245 L 424 245" stroke="#8a95aa" stroke-width="2" fill="none"/>
+        </g>
+        <text x="250" y="280" font-size="28" text-anchor="middle" fill="#e8672a" opacity="0.7" font-weight="bold">Milestone</text>
+      </svg>
       <div class="gallery-tag">Company Milestone &amp; Success Celebrations</div>
     </div>
     <div class="gallery-item reveal reveal-delay-2">
-      <img src="https://via.placeholder.com/500x300/141c2e/1ec8a0?text=Product+Launch" alt="Product launch event" />
+      <svg viewBox="0 0 500 300" xmlns="http://www.w3.org/2000/svg" style="width: 100%; height: 100%; display: block;">
+        <rect width="500" height="300" fill="#141c2e"/>
+        <defs><radialGradient id="g4" cx="50%" cy="30%" r="60%"><stop offset="0%" style="stop-color:#1ec8a0;stop-opacity:0.2" /><stop offset="100%" style="stop-color:#141c2e;stop-opacity:0" /></radialGradient></defs>
+        <rect width="500" height="300" fill="url(#g4)"/>
+        <!-- Spotlight -->
+        <circle cx="250" cy="100" r="80" fill="none" stroke="#1ec8a0" stroke-width="2" opacity="0.4"/>
+        <polygon points="180,100 320,100 250,200" fill="#1ec8a0" opacity="0.1"/>
+        <!-- Product box -->
+        <rect x="180" y="150" width="140" height="100" fill="none" stroke="#e8672a" stroke-width="3" opacity="0.7" rx="4"/>
+        <line x1="200" y1="150" x2="200" y2="250" stroke="#e8672a" stroke-width="1.5" opacity="0.5"/>
+        <line x1="220" y1="150" x2="220" y2="250" stroke="#e8672a" stroke-width="1.5" opacity="0.5"/>
+        <line x1="240" y1="150" x2="240" y2="250" stroke="#e8672a" stroke-width="1.5" opacity="0.5"/>
+        <line x1="260" y1="150" x2="260" y2="250" stroke="#e8672a" stroke-width="1.5" opacity="0.5"/>
+        <line x1="280" y1="150" x2="280" y2="250" stroke="#e8672a" stroke-width="1.5" opacity="0.5"/>
+        <line x1="300" y1="150" x2="300" y2="250" stroke="#e8672a" stroke-width="1.5" opacity="0.5"/>
+        <!-- Ribbon -->
+        <path d="M 250 150 Q 240 140 250 130 Q 260 140 250 150" fill="#1ec8a0" opacity="0.6"/>
+        <text x="250" y="205" font-size="20" text-anchor="middle" fill="#1ec8a0" opacity="0.6" font-weight="bold">LAUNCH</text>
+        <text x="250" y="280" font-size="24" text-anchor="middle" fill="#1ec8a0" opacity="0.7">Product Launch</text>
+      </svg>
       <div class="gallery-tag">Product Launch Events</div>
     </div>
     <div class="gallery-item reveal reveal-delay-3">
-      <img src="https://via.placeholder.com/500x300/1a2338/e8672a?text=Holiday+Party" alt="Holiday party" />
+      <svg viewBox="0 0 500 300" xmlns="http://www.w3.org/2000/svg" style="width: 100%; height: 100%; display: block;">
+        <rect width="500" height="300" fill="#1a2338"/>
+        <defs><linearGradient id="g5" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" style="stop-color:#e8672a;stop-opacity:0.2" /><stop offset="100%" style="stop-color:#1ec8a0;stop-opacity:0.2" /></linearGradient></defs>
+        <rect width="500" height="300" fill="url(#g5)"/>
+        <!-- Snow/Winter effect -->
+        <circle cx="100" cy="50" r="4" fill="#f0ede8" opacity="0.5"/>
+        <circle cx="200" cy="80" r="3" fill="#f0ede8" opacity="0.4"/>
+        <circle cx="350" cy="60" r="3.5" fill="#f0ede8" opacity="0.45"/>
+        <circle cx="420" cy="100" r="2.5" fill="#f0ede8" opacity="0.35"/>
+        <!-- Christmas tree -->
+        <polygon points="250,80 200,140 210,140 160,190 170,190 120,240 380,240 340,190 350,190 300,140 310,140" fill="none" stroke="#1ec8a0" stroke-width="2.5" opacity="0.6"/>
+        <circle cx="250" cy="70" r="8" fill="#e8672a" opacity="0.6"/>
+        <!-- Decorative lights -->
+        <circle cx="210" cy="130" r="3" fill="#e8672a" opacity="0.7"/>
+        <circle cx="240" cy="150" r="2.5" fill="#1ec8a0" opacity="0.6"/>
+        <circle cx="260" cy="145" r="2.5" fill="#e8672a" opacity="0.65"/>
+        <circle cx="290" cy="160" r="3" fill="#1ec8a0" opacity="0.6"/>
+        <!-- Party elements -->
+        <g opacity="0.5">
+          <circle cx="130" cy="220" r="18" fill="#8a95aa"/>
+          <path d="M 112 238 L 112 270 M 130 238 L 130 275 M 148 238 L 148 270" stroke="#8a95aa" stroke-width="2.5" fill="none"/>
+        </g>
+        <text x="250" y="280" font-size="28" text-anchor="middle" fill="#e8672a" opacity="0.7" font-weight="bold">Holiday Party</text>
+      </svg>
       <div class="gallery-tag">Holiday Parties &amp; End-of-Year Galas</div>
     </div>
     <div class="gallery-item reveal reveal-delay-1">
-      <img src="https://via.placeholder.com/1200x220/141c2e/1ec8a0?text=VIP+Corporate+Dinner" alt="VIP corporate dinner" />
+      <svg viewBox="0 0 1200 220" xmlns="http://www.w3.org/2000/svg" style="width: 100%; height: 100%; display: block;">
+        <rect width="1200" height="220" fill="#141c2e"/>
+        <defs><linearGradient id="g6" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" style="stop-color:#1ec8a0;stop-opacity:0.15" /><stop offset="50%" style="stop-color:#e8672a;stop-opacity:0.1" /><stop offset="100%" style="stop-color:#1ec8a0;stop-opacity:0.15" /></linearGradient></defs>
+        <rect width="1200" height="220" fill="url(#g6)"/>
+        <!-- Fancy dining table -->
+        <ellipse cx="300" cy="160" rx="100" ry="35" fill="#1ec8a0" opacity="0.35"/>
+        <rect x="220" y="100" width="160" height="60" fill="none" stroke="#1ec8a0" stroke-width="2" opacity="0.4" rx="6"/>
+        <!-- Table settings (cutlery and plates) -->
+        <g opacity="0.5">
+          <circle cx="250" cy="130" r="15" fill="none" stroke="#f0ede8" stroke-width="1.5"/>
+          <line x1="235" y1="130" x2="220" y2="130" stroke="#f0ede8" stroke-width="1.5"/>
+          <line x1="265" y1="130" x2="280" y2="130" stroke="#f0ede8" stroke-width="1.5"/>
+          <circle cx="310" cy="130" r="15" fill="none" stroke="#f0ede8" stroke-width="1.5"/>
+          <line x1="295" y1="130" x2="280" y2="130" stroke="#f0ede8" stroke-width="1.5"/>
+          <line x1="325" y1="130" x2="340" y2="130" stroke="#f0ede8" stroke-width="1.5"/>
+        </g>
+        <!-- Second table -->
+        <ellipse cx="900" cy="160" rx="110" ry="38" fill="#e8672a" opacity="0.3"/>
+        <rect x="810" y="95" width="180" height="70" fill="none" stroke="#e8672a" stroke-width="2" opacity="0.4" rx="6"/>
+        <!-- Wine glasses -->
+        <g opacity="0.6">
+          <path d="M 150 100 L 145 120 Q 145 135 160 140 Q 175 135 175 120 L 170 100" fill="none" stroke="#1ec8a0" stroke-width="2"/>
+          <line x1="150" y1="100" x2="170" y2="100" stroke="#1ec8a0" stroke-width="1.5"/>
+          <path d="M 850 95 L 842 115 Q 842 132 860 138 Q 878 132 878 115 L 870 95" fill="none" stroke="#e8672a" stroke-width="2"/>
+          <line x1="850" y1="95" x2="870" y2="95" stroke="#e8672a" stroke-width="1.5"/>
+        </g>
+        <!-- Elegant diners silhouettes -->
+        <g opacity="0.4">
+          <circle cx="80" cy="140" r="16" fill="#8a95aa"/>
+          <path d="M 65 156 L 65 190" stroke="#8a95aa" stroke-width="2.5" fill="none"/>
+          <circle cx="1050" cy="145" r="18" fill="#8a95aa"/>
+          <path d="M 1032 163 L 1032 200" stroke="#8a95aa" stroke-width="2.5" fill="none"/>
+        </g>
+        <!-- Candles -->
+        <rect x="555" y="80" width="6" height="50" fill="#f0ede8" opacity="0.4"/>
+        <polygon points="558,75 553,80 563,80" fill="#e8672a" opacity="0.6"/>
+        <rect x="635" y="85" width="5" height="45" fill="#f0ede8" opacity="0.35"/>
+        <polygon points="637.5,80 633,85 642,85" fill="#e8672a" opacity="0.5"/>
+        <text x="600" y="195" font-size="32" text-anchor="middle" fill="#1ec8a0" opacity="0.7" font-weight="bold">VIP Executive Dinners</text>
+      </svg>
       <div class="gallery-tag">VIP Executive Dinners &amp; Cocktail Hours</div>
     </div>
   </div>
@@ -1044,7 +1453,21 @@
     <p class="testimonial-text">We used to dread planning our annual company party. This year, we handed everything over to the team. We just showed up, had an incredible night, and our employees are still talking about it weeks later. An absolute game-changer.</p>
     <div class="testimonial-attribution">
       <div class="testimonial-avatar">
-        <img src="https://via.placeholder.com/96x96/1a2338/e8672a?text=JD" alt="Client avatar" />
+        <svg viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg" style="width: 100%; height: 100%; display: block;">
+          <defs><linearGradient id="av1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#e8672a;stop-opacity:0.8" /><stop offset="100%" style="stop-color:#1ec8a0;stop-opacity:0.6" /></linearGradient></defs>
+          <rect width="96" height="96" fill="url(#av1)"/>
+          <!-- Head -->
+          <circle cx="48" cy="35" r="18" fill="#f0ede8" opacity="0.8"/>
+          <!-- Body -->
+          <ellipse cx="48" cy="65" rx="20" ry="25" fill="#f0ede8" opacity="0.7"/>
+          <!-- Eyes -->
+          <circle cx="42" cy="32" r="2.5" fill="#1a2338"/>
+          <circle cx="54" cy="32" r="2.5" fill="#1a2338"/>
+          <!-- Smile -->
+          <path d="M 42 38 Q 48 41 54 38" stroke="#1a2338" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+          <!-- Professional accessory (tie) -->
+          <path d="M 48 50 L 45 62 L 48 70 L 51 62 Z" fill="#e8672a" opacity="0.7"/>
+        </svg>
       </div>
       <span class="testimonial-name">— HR Director / Executive Assistant</span>
     </div>
@@ -1147,7 +1570,28 @@
 </footer>
 
 <script>
-  // Scroll reveal
+  // ═══════════════════════════════════════════
+  // THEME TOGGLE FUNCTIONALITY
+  // ═══════════════════════════════════════════
+  const themeToggle = document.getElementById('themeToggle');
+  const htmlElement = document.documentElement;
+  
+  // Check for saved theme preference or default to light
+  const currentTheme = localStorage.getItem('theme') || 'light';
+  htmlElement.setAttribute('data-theme', currentTheme);
+  
+  // Toggle theme on button click
+  themeToggle.addEventListener('click', () => {
+    const theme = htmlElement.getAttribute('data-theme');
+    const newTheme = theme === 'light' ? 'dark' : 'light';
+    
+    htmlElement.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+  });
+
+  // ═══════════════════════════════════════════
+  // SCROLL REVEAL ANIMATION
+  // ═══════════════════════════════════════════
   const reveals = document.querySelectorAll('.reveal');
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {

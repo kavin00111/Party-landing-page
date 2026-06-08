@@ -1,0 +1,18 @@
+# robots.txt - Vantage Events SEO Configuration
+# Allow all search engines to crawl and index
+
+User-agent: *
+Allow: /
+Allow: /landing-page.html
+Allow: /sitemap.xml
+
+# Disallow private pages (none for this landing page)
+
+# Sitemap location
+Sitemap: https://www.vantageevents.com/sitemap.xml
+
+# Crawl delay (seconds)
+Crawl-delay: 1
+
+# Request rate
+Request-rate: 30/1m
